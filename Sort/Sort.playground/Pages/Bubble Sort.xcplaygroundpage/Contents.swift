@@ -4,9 +4,9 @@ import Foundation
 
 var str = "Hello, playground"
 
-var sourceArr = [2,3,1,9,10,4,6]
+var sourceArr = [2,3,3,1,9,10,4,6]
 // MARK: Bubble Sort
-func bubbleSort(_ nums: inout [Int]) -> [Int] {
+func bubbleSort(_ nums: inout [Int]) {
     
     for i in 0..<nums.count {
         var j = nums.count - 1
@@ -17,10 +17,12 @@ func bubbleSort(_ nums: inout [Int]) -> [Int] {
                 nums[j - 1] = nums[j]
                 nums[j] = temp
             }
-            
+
             j -= 1
         }
     }
-    
-    return nums
 }
+
+bubbleSort(&sourceArr)
+
+print(sourceArr)
