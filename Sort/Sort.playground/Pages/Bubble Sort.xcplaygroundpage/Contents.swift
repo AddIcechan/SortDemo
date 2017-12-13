@@ -14,10 +14,8 @@ func bubbleSort(_ nums: inout [Int]) {
     // 开始遍历
     for i in 0..<nums.count {
         // 从 0 开始，往遍历比较。知道 i 的位置。如果检查到 nums[j] > nums[j + 1]，那么交换位置。
-        for j in (0..<nums.count - 1 - i)  {
-            if nums[j] > nums[j + 1] {
-                nums.swapAt(j, j + 1)
-            }
+        for j in (0..<nums.count - 1 - i) where nums[j] > nums[j + 1] {
+            nums.swapAt(j, j + 1)
         }
     }
 }
