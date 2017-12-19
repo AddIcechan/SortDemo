@@ -66,40 +66,40 @@ func mergeSortFromTopToBottom(_ nums: [Int]) -> [Int] {
 // MARK: 从下而上
 func mergeSorFromBottomToTop(_ nums: [Int]) -> [Int] {
     
-    func traverse(_ nums: [[Int]]) -> [[Int]] {
+    func compareToMerge(_ leftArr: [Int], rightArr: [Int]) -> [Int] {
         
-        func compareToMerge(_ leftArr: [Int], rightArr: [Int]) -> [Int] {
-            
-            var left = 0, right = 0
-            
-            var resultArr : [Int] = []
-            print(leftArr)
-            print(rightArr)
-            while left < leftArr.count && right < rightArr.count {
-                if leftArr[left] < rightArr[right] {
-                    resultArr.append(leftArr[left])
-                    left += 1
-                } else if leftArr[left] > rightArr[right] {
-                    resultArr.append(rightArr[right])
-                    right += 1
-                } else {
-                    resultArr.append(leftArr[left])
-                    left += 1
-                    resultArr.append(rightArr[right])
-                    right += 1
-                }
+        var left = 0, right = 0
+        
+        var resultArr : [Int] = []
+        print(leftArr)
+        print(rightArr)
+        while left < leftArr.count && right < rightArr.count {
+            if leftArr[left] < rightArr[right] {
+                resultArr.append(leftArr[left])
+                left += 1
+            } else if leftArr[left] > rightArr[right] {
+                resultArr.append(rightArr[right])
+                right += 1
+            } else {
+                resultArr.append(leftArr[left])
+                left += 1
+                resultArr.append(rightArr[right])
+                right += 1
             }
-            
-            for (index, element) in leftArr.enumerated() where index >= left {
-                resultArr.append(element)
-            }
-            
-            for (index, element) in rightArr.enumerated() where index >= right {
-                resultArr.append(element)
-            }
-            
-            return resultArr
         }
+        
+        for (index, element) in leftArr.enumerated() where index >= left {
+            resultArr.append(element)
+        }
+        
+        for (index, element) in rightArr.enumerated() where index >= right {
+            resultArr.append(element)
+        }
+        
+        return resultArr
+    }
+    
+    func traverse(_ nums: [[Int]]) -> [[Int]] {
         
         var tempNums : [[Int]] = []
         for (index, evenNum) in nums.enumerated() where index % 2 == 0 {
@@ -126,10 +126,6 @@ func mergeSorFromBottomToTop(_ nums: [Int]) -> [Int] {
         return traverse(tempNums)
     }
     
-    func merge(leftArr: [Int], rightArr: [Int]) -> [Int] {
-        return []
-    }
-    
     guard nums.count > 1 else {
         return nums
     }
@@ -140,14 +136,9 @@ func mergeSorFromBottomToTop(_ nums: [Int]) -> [Int] {
     return tempNums.first!
 }
 
-
-
-
-let nums : [Int] = [3,1,2,2,4]
-print(nums)
-
+let nums = [3,4,1,20,14,16,2]
 print(mergeSortFromTopToBottom(nums))
-//print(mergeSorFromBottomToTop(nums))
+print(mergeSorFromBottomToTop(nums))
 
 
 

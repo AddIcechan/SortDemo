@@ -74,9 +74,8 @@ func maxHeapify(_ nums: inout [Int], start: Int, end: Int) {
     }
 }
 
-var nums = [1,4,2,16,14,20,0]
+var nums = [3,4,1,20,14,16,2]
 print("source binary tree" + nums.binaryTreeStr)
 heapSort(&nums)
-print(nums)
 
 

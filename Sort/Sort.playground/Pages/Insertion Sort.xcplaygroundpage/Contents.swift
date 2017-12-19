@@ -20,13 +20,10 @@ func insertionSort(_ nums: inout [Int]) {
         }
         nums[j + 1] = temp
     }
-    
 }
 
-var sourceArr = [2,3,3,1,9,10,4,6]
-
+var nums = [3,4,1,20,14,16,2]
 insertionSort(&sourceArr)
-sourceArr
 
 
 

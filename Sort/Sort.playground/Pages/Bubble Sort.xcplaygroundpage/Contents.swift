@@ -4,7 +4,6 @@ import Foundation
 
 var str = "Hello, playground"
 
-var sourceArr = [2,3,3,1,9,10,4,6]
 // MARK: Bubble Sort
 func bubbleSort(_ nums: inout [Int]) {
     // 个数小于 1 的数组，没有比较的必要了～～
@@ -20,6 +19,6 @@ func bubbleSort(_ nums: inout [Int]) {
     }
 }
 
-bubbleSort(&sourceArr)
+var nums = [3,4,1,20,14,16,2]
+bubbleSort(&nums)
 
-print(sourceArr)

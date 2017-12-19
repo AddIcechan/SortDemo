@@ -55,6 +55,5 @@ func shellSort(_ nums: inout [Int]) {
 
 var nums = [3,4,1,20,14,16,2]
 shellSort(&nums)
-print(nums)
 
 

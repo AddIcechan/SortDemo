@@ -46,9 +46,7 @@ func quickSort(_ nums: inout [Int], low: Int, high: Int) {
     quickSort(&nums, low: low, high: i)
 }
 
-var arr = [3,2,4,1,5]
+var nums = [3,4,1,20,14,16,2]
+quickSort(&nums, low: 0, high: nums.count - 1)
 
-quickSort(&arr, low: 0, high: arr.count - 1)
-
-print(arr)
 
